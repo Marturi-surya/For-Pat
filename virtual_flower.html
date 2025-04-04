@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Patty 🌸</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      position: absolute;
+      bottom: 30px; /* Positioned at the bottom */
+      animation: floatButton 2s infinite ease-in-out; /* Floating effect */
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes floatButton {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .box, .note {
+      opacity: 0;
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .box {
+      width: 280px;
+      height: 280px;
+      background: #ffb6c1;
+      border-radius: 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transform: translateY(20px);
+    }
+
+    .flower {
+      width: 150px;
+      height: 150px;
+      background-image: url('flowers.jpg');
+      background-size: cover;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #333;
+      transform: translateY(20px);
+      max-width: 340px;
+      line-height: 1.6;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="flowerBox">
+    <div class="flower"></div>
+  </div>
+
+  <div class="note" id="noteMessage">
+    I know your results came out normal—and that’s a relief! 🌸<br><br>
+    But still... please don’t forget to take care of yourself, truly. You mean a lot, and I just want you to feel your best. 🤗<br><br>
+    <strong>Hope you feel 100% better soon (before Saturday!)</strong> 💪<br><br>
+    Here’s some flowers 🌷, a warm hug 🤗🫂, and a loving wish that you deserve all the care too 💖
+  </div>
+
+  <button class="button" id="revealButton" onclick="revealBox()">Click this button Patty</button>
+
+  <script>
+    function revealBox() {
+      document.getElementById('revealButton').style.display = 'none';
+      document.getElementById('flowerBox').classList.add('show');
+      document.getElementById('noteMessage').classList.add('show');
+    }
+  </script>
+
+</body>
+</html>
